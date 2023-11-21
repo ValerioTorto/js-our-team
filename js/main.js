@@ -1,43 +1,43 @@
 let array = [
     {
-        fullName:"Tizio Caio 1" ,
-        role: "Developer",
-        image: "coso.jpg",
+        fullName:"Wayne Barnett" ,
+        role: "Founder & CEO",
+        image: "wayne-barnett-founder-ceo",
 
         
     },
     {
-        fullName:"Tizio Caio 2" ,
-        role: "Developer",
-        image: "coso.jpg",
+        fullName:"Angela Carrol" ,
+        role: "Chief Editor",
+        image: "angela-caroll-chief-editor",
 
         
     },
     {
         fullName:"Tizio Caio 3" ,
-        role: "Developer",
-        image: "coso.jpg",
+        role: "Office Manager",
+        image: "walter-gordon-office-manager",
 
         
     },
     {
         fullName:"Tizio Caio 4" ,
-        role: "Developer",
-        image: "coso.jpg",
+        role: "Social Media Manager",
+        image: "angela-lopez-social-media-manager",
 
         
     },
     {
         fullName:"Tizio Caio 5" ,
         role: "Developer",
-        image: "coso.jpg",
+        image: "scott-estrada-developer",
 
         
     },
     {
         fullName:"Tizio Caio 6" ,
-        role: "Developer",
-        image: "coso.jpg",
+        role: "Graphic Designer",
+        image: "barbara-ramos-graphic-designer",
 
         
     }
@@ -64,4 +64,40 @@ for (let i = 0; i < arrayOfObject.length; i++) {
 }
 printArrayOfObject(array);
 
+//card createCard()
+//document.getElementById("cardContainer").addChild(card)
 
+//---------------MILESTONE 2----------------
+
+function createCards(htmlElement, arrayOfObject) {
+    for (let i= 0; i < arrayOfObject.length; i++) {
+        let p = document.createElement("p")
+        p.innerHTML += arrayOfObject[i].fullName
+        htmlElement.appendChild(p)
+    }
+}
+let cardContainer = document.getElementById("cardContainer")
+createCards(cardContainer, array)
+//let p = document.createElement("p")
+//p.innerHTML += "TEST"
+//document.getElementById("cardContainer").appendChild(p)
+
+document.getElementById("team_cards").innerHTML += `
+    <div class="card col-4">
+        <img src="./img/angela-caroll-chief-editor.jpg${array[0].fullName}" class="card-img-top" alt="Angela">
+        <div class="card-body">
+            <p class="card-text">${array[0].name}</p>
+            <p>${array[0].job}</p>
+        </div>
+    </div>
+
+`
+document.getElementById("team_cards").innerHTML += `
+    <div class="card col-4">
+        <img src="./img/${array[1].fullName}" class="card-img-top" alt="Angela">
+        <div class="card-body">
+            <p class="card-text">${array[1].name}</p>
+            <p>${array[1].job}</p>
+        </div>
+    </div>
+`
